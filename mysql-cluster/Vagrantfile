@@ -1,0 +1,99 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.vm.define "clusterdb1" do |clusterdb1|
+    # Box Settings
+    clusterdb1.vm.box = "bento/ubuntu-18.04"
+    clusterdb1.vm.hostname = "clusterdb1"
+
+    # Provider Settings
+    clusterdb1.vm.provider "virtualbox" do |vb|
+      # Display the VirtualBox GUI when booting the machine
+      vb.gui = false
+      vb.name = "clusterdb1"
+      # Customize the amount of memory on the VM:
+      vb.memory = "1024"
+    end
+
+    # Network Settings
+    # clusterdb1.vm.network "forwarded_port", guest: 80, host: 8080
+    # clusterdb1.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+    clusterdb1.vm.network "private_network", ip: "192.168.33.11"
+    # clusterdb1.vm.network "public_network"
+
+    # Folder Settings
+    # clusterdb1.vm.synced_folder "../data", "/vagrant_data"
+
+    # Provision Settings
+    # clusterdb1.vm.provision "shell", inline: <<-SHELL
+    #   apt-get update
+    #   apt-get install -y apache2
+    # SHELL
+    clusterdb1.vm.provision "shell", path: "provision/bootstrap-clusterdb1.sh", privileged: false
+  end
+  
+  config.vm.define "clusterdb2" do |clusterdb2|
+    # Box Settings
+    clusterdb2.vm.box = "bento/ubuntu-18.04"
+    clusterdb2.vm.hostname = "clusterdb2"
+
+    # Provider Settings
+    clusterdb2.vm.provider "virtualbox" do |vb|
+      # Display the VirtualBox GUI when booting the machine
+      vb.gui = false
+      vb.name = "clusterdb2"
+      # Customize the amount of memory on the VM:
+      vb.memory = "1024"
+    end
+
+    # Network Settings
+    # clusterdb2.vm.network "forwarded_port", guest: 80, host: 8080
+    # clusterdb2.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+    clusterdb2.vm.network "private_network", ip: "192.168.33.12"
+    # clusterdb2.vm.network "public_network"
+
+    # Folder Settings
+    # clusterdb2.vm.synced_folder "../data", "/vagrant_data"
+
+    # Provision Settings
+    # clusterdb2.vm.provision "shell", inline: <<-SHELL
+    #   apt-get update
+    #   apt-get install -y apache2
+    # SHELL
+    #clusterdb2.vm.provision "shell", path: "provision/bootstrap-clusterdb2.sh", privileged: false
+  end
+  
+  config.vm.define "clusterdb3" do |clusterdb3|
+    # Box Settings
+    clusterdb3.vm.box = "bento/ubuntu-18.04"
+    clusterdb3.vm.hostname = "clusterdb3"
+
+    # Provider Settings
+    clusterdb3.vm.provider "virtualbox" do |vb|
+      # Display the VirtualBox GUI when booting the machine
+      vb.gui = false
+      vb.name = "clusterdb3"
+      # Customize the amount of memory on the VM:
+      vb.memory = "1024"
+    end
+
+    # Network Settings
+    # clusterdb3.vm.network "forwarded_port", guest: 80, host: 8080
+    # clusterdb3.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+    clusterdb3.vm.network "private_network", ip: "192.168.33.13"
+    # clusterdb3.vm.network "public_network"
+
+    # Folder Settings
+    # clusterdb3.vm.synced_folder "../data", "/vagrant_data"
+
+    # Provision Settings
+    # clusterdb3.vm.provision "shell", inline: <<-SHELL
+    #   apt-get update
+    #   apt-get install -y apache2
+    # SHELL
+	#clusterdb3.vm.provision "shell", path: "provision/bootstrap-clusterdb3.sh", privileged: false
+  end
+
+end
