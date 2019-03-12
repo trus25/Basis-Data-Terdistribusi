@@ -12,7 +12,7 @@
   | 192.168.100.13 | clusterdb3 | Node 2|
   | 192.168.100.14 | clusterdb4 | Load Balancer |
 # 3. Instalasi
-  1. ```git clone https://github.com/ahmadkikok/bdt-mysql_cluster.git```
+  1. ```git clone https://github.com/trus25/Basis-Data-Terdistribusi.git```
   2. Hapus folder .vagrant untuk menghapus konfigurasi VB sebelumnya.
   3. Lakukan vagrant up dan lakukan vagrant ssh ditiap clusternya.
 # 4. Configurasi pada clusterdb1(Manager
