@@ -1,1 +1,1 @@
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/BDT/mysql-cluster","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/BDT/Basis-Data-Terdistribusi/mysql-cluster","disabled":false,"__vagrantfile":true}}}
