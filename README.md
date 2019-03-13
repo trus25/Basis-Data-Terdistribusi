@@ -257,10 +257,6 @@ clusterdb2 MySQL API:
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/clusterdb2servicestatus.JPG)
 ## 5.4 ndb_mgm
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/ndb_mgm.JPG)
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/insert%20data.jpg)
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/clusterdb1servicestatus.JPG)
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/clusterdb1servicestatus.JPG)
-
 ## 5.5 Contoh Proses Query
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/select%20database.jpg)
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/insert%20data.jpg)
