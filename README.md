@@ -269,5 +269,6 @@ clusterdb2 MySQL API:
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/statusproxyshunned.JPG)
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/proxyselect.JPG)
 ## 5.7 ProxySQL with SQLYog
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/statusproxy.JPG)
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/statusproxyshunned.JPG)
+![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/sqlyoghostname.JPG)
+![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/sqlyogselect.JPG)
+![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/sqlyoginsert.JPG)
