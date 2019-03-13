@@ -258,13 +258,29 @@ clusterdb2 MySQL API:
 ## 5.4 ndb_mgm
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/ndb_mgm.JPG)
 ## 5.5 Contoh Proses Query
+Menampilkan data pada tabel employee:
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/select%20database.jpg)
+
+Memasukkan data ke tabel employee:
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/insert%20data.jpg)
+
 ## 5.6 Hasil Instalasi dan Konfigurasi ProxySQL
+Proxy status, kedua hostname berstatus ```ONLINE```
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/statusproxy.JPG)
+Proxy status, dengan salah satu dimatikan servicenya sehingga statusnya menjadi ```SHUNNED```
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/statusproxyshunned.JPG)
+Menampilkan data pada tabel employee, setelah ditambahkan di API
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/proxyselect.JPG)
 ## 5.7 ProxySQL with SQLYog
+Menampilkan hostname di SQLyog:
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/sqlyoghostname.JPG)
+Menampilkan data pada tabel employee di SQLyog:
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/sqlyogselect.JPG)
+Menambahkan data ke tabel employee:
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/sqlyoginsert.JPG)
+Menampilkan data pada tabel employee, setelah ditambahkan di SQLyog. Data sudah sesusai dengan yang sudah ditambahkan
+![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/proxyselectakhir.JPG)
+Data juga sudah sesuai di clusterdb 1:
+![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/clusterdb1selectakhir.JPG)
+dan clusterdb2:
+![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/clusterdb2selectakhir.JPG)
