@@ -24,6 +24,7 @@ INSERT INTO rc1 (a,b) VALUES (5,13);
 INSERT INTO rc1 (a,b) VALUES (6,13);
 ```
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/Tugas-implementasi-partisi/Screenshoot/RangePartitionInsert.JPG)
+
 Menampilkan hasil partisi dengan ```SELECT *,'p0' FROM rc1 PARTITION (p0) UNION ALL SELECT *,'p3' FROM rc1 PARTITION (p3) ORDER BY a,b ASC;```
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/Tugas-implementasi-partisi/Screenshoot/RangePartitionSelect.JPG)
 ## List Partition
