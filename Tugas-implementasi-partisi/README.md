@@ -1,3 +1,5 @@
+# Tugas Implementasi Partisi
+# Farhan Zuhdi 5111640000070
 # Partition
 ## Range Partition
 Membuat tabel serta melakukan partisi p0 < 5,12 selain itu akan di masukkan ke p3.
