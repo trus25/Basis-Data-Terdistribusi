@@ -1,6 +1,16 @@
 # Partition
 ## Range Partition
 Membuat tabel serta melakukan partisi p0 < 5,12 selain itu akan di masukkan ke p3.
+```
+CREATE TABLE rc1 (
+    a INT,
+    b INT
+)
+PARTITION BY RANGE COLUMNS(a, b) (
+    PARTITION p0 VALUES LESS THAN (5, 12),
+    PARTITION p3 VALUES LESS THAN (MAXVALUE, MAXVALUE)
+);
+```
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/Tugas-implementasi-partisi/Screenshoot/RangePartition1.JPG)
 Masukkan data kedalam tabel rc1.
 ```
