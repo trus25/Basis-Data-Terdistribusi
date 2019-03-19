@@ -166,6 +166,7 @@ Explain pada tabel partitioned_measures
 ## Benchmark
 Running time saat menjalankan query benchmark pada tabel measures adalah 0.623s
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/Tugas-implementasi-partisi/Screenshoot/Benchmark1.JPG)
+
 Running time saat menjalankan query benchmark pada tabel partitioned_measures adalah 0.748s
 ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/Tugas-implementasi-partisi/Screenshoot/Benchmark2.JPG)
 ## Big Delete
