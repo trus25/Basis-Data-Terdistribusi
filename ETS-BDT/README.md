@@ -1,4 +1,6 @@
 # ETS BDT
+### Farhan Zuhdi
+### 05111640000070
 # 1.Model Arsitektur
   | IP Address | Hostname | Deskripsi |
   | --- | --- | --- |
@@ -68,7 +70,7 @@
       ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/post.JPG)
    4. Saat salah satu node mati.
       ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/node1mati.JPG)
-      ![alt]()
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/node1mati1.JPG)
    5. Saat kedua node mati maka server juga akan mati, sehingga ketika masuk ke http://192.168.33.14/wordpress akan masuk kehalaman           instalasi.
       ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/semuanodemati.JPG)
       ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/semuanodemati1.JPG)
@@ -79,4 +81,5 @@
       ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/graph.JPG)
       ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/result.JPG)
 # 5. Referensi
-
+      https://www.youtube.com/watch?v=M-iAXz8vs48
+      https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/
