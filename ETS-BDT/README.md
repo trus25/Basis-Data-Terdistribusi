@@ -70,7 +70,8 @@
       ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/post.JPG)
    4. Saat salah satu node mati.
       ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/node1mati.JPG)
-      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/node1mati1.JPG)
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/node1mati2.JPG)
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/node1mati3.JPG)
    5. Saat kedua node mati maka server juga akan mati, sehingga ketika masuk ke http://192.168.33.14/wordpress akan masuk kehalaman           instalasi.
       ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/semuanodemati.JPG)
       ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/semuanodemati1.JPG)
