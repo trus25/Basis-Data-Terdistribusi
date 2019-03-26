@@ -11,6 +11,7 @@
   | 192.168.100.12 | clusterdb2 | Data Node1 dan MySQL API Node2|
   | 192.168.100.13 | clusterdb3 | Data Node2 |
   | 192.168.100.14 | clusterdb4 | Load Balancer |
+  
   Instalasi mysql-cluster sama dengan [tugas](https://github.com/trus25/Basis-Data-Terdistribusi) sebelumnya.
 # 3. Instalasi
   1. ```git clone https://github.com/trus25/Basis-Data-Terdistribusi.git```
