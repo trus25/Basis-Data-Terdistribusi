@@ -1,10 +1,5 @@
-# Implementasi MySQL Cluster
-# 1.Yang dibutuhkan
-  - Vagrant
-  - ubuntu18.04
-  - MySQL Remote Software
-  - MySQL Data Sample
-# 2.Model Arsitektur
+# ETS BDT
+# 1.Model Arsitektur
   | IP Address | Hostname | Deskripsi |
   | --- | --- | --- |
   | 192.168.100.11 | clusterdb1 | NDB Manager dan MySQL API Node1|
@@ -13,53 +8,75 @@
   | 192.168.100.14 | clusterdb4 | Load Balancer |
   
   Instalasi mysql-cluster sama dengan [tugas](https://github.com/trus25/Basis-Data-Terdistribusi) sebelumnya.
-# 3. Instalasi
-  1. ```git clone https://github.com/trus25/Basis-Data-Terdistribusi.git```
-  2. Hapus folder .vagrant untuk menghapus konfigurasi VB sebelumnya.
-  3. Lakukan vagrant up dan vagrant ssh ditiap clusternya.
-# 4. Konfigurasi
+# 2. Instalasi
+  1. Tambahkan database ```ets``` pada clusterdb1 dan clusterdb2
+     ```
+     CREATE DATABASE ets;
+     GRANT ALL PRIVILEGES on ets.* to 'bdt'@'%';
+     FLUSH PRIVILEGES;
+     ```
+  2. Install apache dan php
+     ```
+     sudo apt update && sudo apt install apache2
+     sudo apt-get install php -y
+     sudo apt-get install php-mysql
+     sudo apt-get install -y php-gd php-imap php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-snmp php-soap php-tidy curl
+     ```
+  3. Download wordpress dan pindahkan ke /var/www/html setelah di extract.
+     ```
+     wget -c http://wordpress.org/latest.tar.gz
+     tar -xzvf latest.tar.gz -C /var/www/html/
+     ```
+     
+# 3. Konfigurasi
+   1. Rename file wp-config-sample.php menjadi wp-config.php dan ubah konfigurasi database menjadi seperti ini
+      ```
+      /** The name of the database for WordPress */
+      define( 'DB_NAME', 'ets' );
 
-# 5. Dokumentasi
-## 5.1 Hasil Instalasi dan Konfigurasi NDB Manager
-clusterdb1 NDB Manager:
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/clusterdb1status.JPG)
-## 5.2 Hasil Instalasi dan Konfigurasi Data Node
-clusterdb2 Data Node:
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/clusterdb2status.JPG)
-clusterdb3 Data Node:
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/clusterdb3status.JPG)
-## 5.3 Hasil Instalasi dan Konfigurasi MySQL API Node
-clusterdb1 MySQL API:
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/clusterdb1servicestatus.JPG)
-clusterdb2 MySQL API:
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/clusterdb2servicestatus.JPG)
-## 5.4 ndb_mgm
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/ndb_mgm.JPG)
-## 5.5 Contoh Proses Query
-Menampilkan data pada tabel employee:
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/select%20database.jpg)
+      /** MySQL database username */
+      define( 'DB_USER', 'userbdt' );
 
-Memasukkan data ke tabel employee:
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/insert%20data.jpg)
+      /** MySQL database password */
+      define( 'DB_PASSWORD', 'admin' );
 
-## 5.6 Hasil Instalasi dan Konfigurasi ProxySQL
-Proxy status, kedua hostname berstatus ```ONLINE```
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/statusproxy.JPG)
-Proxy status, dengan salah satu dimatikan servicenya sehingga statusnya menjadi ```SHUNNED```
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/statusproxyshunned.JPG)
-Menampilkan data pada tabel employee, setelah ditambahkan di API
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/proxyselect.JPG)
-## 5.7 ProxySQL with SQLYog
-Menampilkan hostname di SQLyog:
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/sqlyoghostname.JPG)
-Menampilkan data pada tabel employee di SQLyog:
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/sqlyogselect.JPG)
-Menambahkan data ke tabel employee:
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/sqlyoginsert.JPG)
-Menampilkan data pada tabel employee, setelah ditambahkan di SQLyog. Data sudah sesusai dengan yang sudah ditambahkan
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/proxyselectakhir.JPG)
-Data juga sudah sesuai di clusterdb 1:
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/clusterdb1selectakhir.JPG)
-dan clusterdb2:
-![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/mysql-cluster/screenshoot/clusterdb2selectakhir.JPG)
+      /** MySQL hostname */
+      define( 'DB_HOST', '192.168.33.14:6033' );
+      ```
+   2. Kemudian, Ubah database engine menjadi ndb pada ```wordpress\wp-admin\includes\schema.php```. Contoh:
+      ```
+      CREATE TABLE $wpdb->terms (
+      term_id bigint(20) unsigned NOT NULL auto_increment,
+      name varchar(200) NOT NULL default '',
+      slug varchar(200) NOT NULL default '',
+      term_group bigint(10) NOT NULL default 0,
+      PRIMARY KEY  (term_id),
+      KEY slug (slug($max_index_length)),
+      KEY name (name($max_index_length))
+      )ENGINE=NDB $charset_collate;
+      ```
+# 4. Dokumentasi
+   1. Pada http://192.168.33.14/wordpress, akan muncul tampilan instalasi wordpress. Lakukan sesuai petunjuk dan akan                         muncul menu login.
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/wordpresslogin.JPG)
+      wordpress berhasil diinstall.
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/wordpress.JPG)
+   2. Isi database setelah membuat post baru.
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/post.JPG)
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/post1.JPG)
+   3. Saat salah satu server mati.
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/server1mati.JPG)
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/post.JPG)
+   4. Saat salah satu node mati.
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/node1mati.JPG)
+      ![alt]()
+   5. Saat kedua node mati maka server juga akan mati, sehingga ketika masuk ke http://192.168.33.14/wordpress akan masuk kehalaman           instalasi.
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/semuanodemati.JPG)
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/semuanodemati1.JPG)
+   6. Test menggunakan JMeter
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/threadgroup.JPG)
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/requestdefault.JPG)
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/request.JPG)
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/graph.JPG)
+      ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/result.JPG)
+# 5. Referensi
 
