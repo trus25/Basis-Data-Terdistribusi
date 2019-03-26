@@ -82,5 +82,5 @@
       ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/graph.JPG)
       ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/ETS-BDT/Screenshoot/result.JPG)
 # 5. Referensi
-   https://www.youtube.com/watch?v=M-iAXz8vs48
+   https://www.youtube.com/watch?v=M-iAXz8vs48_
    https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/
