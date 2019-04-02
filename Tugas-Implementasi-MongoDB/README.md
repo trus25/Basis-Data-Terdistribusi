@@ -14,5 +14,5 @@
   ![alt](https://github.com/trus25/Basis-Data-Terdistribusi/blob/master/Tugas-Implementasi-MongoDB/Screenshoot/compass.JPG)
   
 # Referensi
-  https://www.mongodb.com/cloud/atlas
+  https://www.mongodb.com/cloud/atlas<br />
   https://www.youtube.com/watch?v=tpz-6Trd1UI
