@@ -31,7 +31,7 @@ gpg --keyserver pgp.mit.edu --recv-keys 0353B12C
 gpg --export --armor 0353B12C | sudo apt-key add -
 ```
 Output penambahan key
-![img](Screenshoot/key)
+![img](Screenshoot/key.jpg)
 5. Install cassandra
 ```
 sudo apt-get update
@@ -41,13 +41,13 @@ sudo apt-get install cassandra
 ```
 sudo service cassandra status
 ```
-![img](Screenshoot/cassandrarunning)
+![img](Screenshoot/cassandrarunning.jpg)
 
 7. Mengecek status cluster
 ```1
 sudo nodetool status
 ```
-![img](Screenshoot/nodetool)
+![img](Screenshoot/nodetool.jpg)
 UN menandakan bahwa sedang hidup dan normal (Up and Normal)
 
 
@@ -236,8 +236,8 @@ Setelah itu cek status nodetool
 sudo nodetool status
 ```
 Maka hasilnya adalah ini
-![img](Screenshoot/multinode-nodetool1)
-![img](Screenshoot/multinode-nodetool2)
+![img](Screenshoot/multinode-nodetool1.jpg)
+![img](Screenshoot/multinode-nodetool2.jpg)
 
 # 3. Referensi
 https://www.digitalocean.com/community/tutorials/how-to-install-cassandra-and-run-a-single-node-cluster-on-ubuntu-14-04
