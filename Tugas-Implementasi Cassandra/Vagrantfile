@@ -1,0 +1,68 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.vm.define "node1" do |node1|
+    # Box Settings
+    node1.vm.box = "bento/ubuntu-14.04"
+    node1.vm.hostname = "node1"
+
+    # Provider Settings
+    node1.vm.provider "virtualbox" do |vb|
+      # Display the VirtualBox GUI when booting the machine
+      vb.gui = false
+      vb.name = "node1"
+      # Customize the amount of memory on the VM:
+      vb.memory = "1024"
+    end
+
+    # Network Settings
+    # node1.vm.network "forwarded_port", guest: 80, host: 8080
+    # node1.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+    node1.vm.network "private_network", ip: "192.168.33.11"
+    # node1.vm.network "public_network"
+
+    # Folder Settings
+    # node1.vm.synced_folder "../data", "/vagrant_data"
+
+    # Provision Settings
+    # node1.vm.provision "shell", inline: <<-SHELL
+    #   apt-get update
+    #   apt-get install -y apache2
+    # SHELL
+    #node1.vm.provision "shell", path: "provision/bootstrap-node1.sh", privileged: false
+  end
+  
+  config.vm.define "node2" do |node2|
+    # Box Settings
+    node2.vm.box = "bento/ubuntu-14.04"
+    node2.vm.hostname = "node2"
+
+    # Provider Settings
+    node2.vm.provider "virtualbox" do |vb|
+      # Display the VirtualBox GUI when booting the machine
+      vb.gui = false
+      vb.name = "node2"
+      # Customize the amount of memory on the VM:
+      vb.memory = "1024"
+    end
+
+    # Network Settings
+    # node2.vm.network "forwarded_port", guest: 80, host: 8080
+    # node2.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+    node2.vm.network "private_network", ip: "192.168.33.12"
+    # node2.vm.network "public_network"
+
+    # Folder Settings
+    # node2.vm.synced_folder "../data", "/vagrant_data"
+
+    # Provision Settings
+    # node2.vm.provision "shell", inline: <<-SHELL
+    #   apt-get update
+    #   apt-get install -y apache2
+    # SHELL
+    #node2.vm.provision "shell", path: "provision/bootstrap-node2.sh", privileged: false
+  end
+
+end
