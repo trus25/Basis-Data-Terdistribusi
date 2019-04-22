@@ -5,7 +5,7 @@ Cassandra atau lengkap APACHE CASSANDRA adalah salah satu produk open source unt
 ![alt](Screenshoot/Perbedaan.JPG)
 # 1.3 Arsitektur
 Konsep Replication Antar Node Cassandra
-![alt](Screenshoot/Arsitektur.JPG)
+![alt](Screenshoot/Arsitektur.jpg)
 Gambar diatas menunjukkan bagaimana Cassandra menggunakan replikasi data antara node dalam sebuah cluster untuk memastikan tidak ada satu titik yang mengalami kegagalan.
 
 ### Cassandra mempunyai beberapa komponen utama yaitu :
@@ -117,8 +117,8 @@ INSERT INTO test(SerialNo) values(401);
 ```
 DELETE FROM test WHERE SerialNo = 400;
 ```
-![alt](Screenshoot/Delete-1.JPG)
-![alt](Screenshoot/Delete-2.JPG)
+![alt](Screenshoot/Delete1.JPG)
+![alt](Screenshoot/Delete2.JPG)
 
 ### Update
 ```
