@@ -10,11 +10,11 @@ Gambar diatas menunjukkan bagaimana Cassandra menggunakan replikasi data antara 
 
 ### Cassandra mempunyai beberapa komponen utama yaitu :
 
-Node : ini adalah server tempat penyimpanan data.
-Data Center : kumpulan dari beberapa node.
-Cluster : Kumpulan dari beberapa data center.
-Commit Log : adalah log dari proses penulisan di Cassandra , yang berfungsi juga sebagai Crash Recovery Mechanism.
-Mem-Table : Adalah memory-resident data structure. Setelah menulis dalam commit log , cassandra melakukan penulisan di sini.
+Node : ini adalah server tempat penyimpanan data.<br />
+Data Center : kumpulan dari beberapa node.<br />
+Cluster : Kumpulan dari beberapa data center<br />
+Commit Log : adalah log dari proses penulisan di Cassandra , yang berfungsi juga sebagai Crash Recovery Mechanism<br />
+Mem-Table : Adalah memory-resident data structure. Setelah menulis dalam commit log , cassandra melakukan penulisan di sini<br />
 CQL : Cassandra Query Language , adalah bahasa perintah query di cassandra .
 
 # 1.4. Yang dibutuhkan untuk instalasi Cassandra
@@ -317,3 +317,7 @@ Maka hasilnya adalah ini
 https://www.digitalocean.com/community/tutorials/how-to-install-cassandra-and-run-a-single-node-cluster-on-ubuntu-14-04<br />
 https://www.digitalocean.com/community/tutorials/how-to-run-a-multi-node-cluster-database-with-cassandra-on-ubuntu-14-04<br />
 https://www.digitalocean.com/community/tutorials/how-to-implement-a-basic-firewall-template-with-iptables-on-ubuntu-14-04<br />
+https://medium.com/@danairwanda/pengenalan-cassandra-database-nosql-3d33a768a20<br />
+https://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlshCopy.html<br />
+https://www.kaggle.com/mohansacharya/graduate-admissions/version/2
+
