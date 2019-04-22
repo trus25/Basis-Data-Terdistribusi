@@ -1,8 +1,27 @@
 # 1. Implementasi Cassandra Single Node
-# 1.1. Yang dibutuhkan
+# 1.1 Apa itu Cassandra?
+Cassandra atau lengkap APACHE CASSANDRA adalah salah satu produk open source untuk menajemen database yang didistribusikan oleh Apache yang sangat scalable (dapat diukur) dan dirancang untuk mengelola data terstruktur yang berkapasitas sangat besar (Big Data) yang tersebar di banyak server. Cassandra merupakan salah satu implementasi dari NoSQL (Not Only SQL) seperti mongoDB. NoSQL merupakan konsep penyimpanan database dinamis yang tidak terikat pada relasi-relasi tabel yang kaku seperti RDBMS. Selain lebih scalable, NoSQL juga memiliki performa pengaksesan yang lebih cepat. Hal-hal itulah yang membuat NoSQL menjadi semakin populer beberapa tahun belakangan ini.
+# 1.2 Perbedaan Antara Relasional dan NoSQL
+![alt](Screenshoot/perbedaan.JPG)
+# 1.3 Arsitektur
+Konsep Replication Antar Node Cassandra
+![alt](Screenshoot/Arsitektur.JPG)
+Gambar diatas menunjukkan bagaimana Cassandra menggunakan replikasi data antara node dalam sebuah cluster untuk memastikan tidak ada satu titik yang mengalami kegagalan.
+
+### Cassandra mempunyai beberapa komponen utama yaitu :
+
+Node : ini adalah server tempat penyimpanan data.
+Data Center : kumpulan dari beberapa node.
+Cluster : Kumpulan dari beberapa data center.
+Commit Log : adalah log dari proses penulisan di Cassandra , yang berfungsi juga sebagai Crash Recovery Mechanism.
+Mem-Table : Adalah memory-resident data structure. Setelah menulis dalam commit log , cassandra melakukan penulisan di sini.
+CQL : Cassandra Query Language , adalah bahasa perintah query di cassandra .
+
+# 1.4. Yang dibutuhkan untuk instalasi Cassandra
 1. Vagrant
 2. Ubuntu 14.04
-# 1.2. Instalasi
+
+# 1.5. Instalasi
 1. Melakukan instalasi properties-common agar dapat melakukan add-repository
 ```
 sudo apt-get update
@@ -50,7 +69,62 @@ sudo nodetool status
 ![img](Screenshoot/nodetool.JPG)
 UN menandakan bahwa sedang hidup dan normal (Up and Normal)
 
+# 1.6 Import Dataset dan CRUD
+Dataset yang akan diimport adalah Graduate Admission yang didapatkan dari kaggle.com
+![alt](Screenshoot/dataset.JPG)
+https://www.kaggle.com/mohansacharya/graduate-admissions/version/2
 
+# 1.6.1 Import
+Sebelum melakukan CRUD kita akan melakukan import dataset:
+1. Petama, lakukan login melalui cqlsh.
+2. Lalu, Buat keyspace untuk tempat table import datasets
+```
+CREATE KEYSPACE admission
+  WITH REPLICATION = { 
+   'class' : 'NetworkTopologyStrategy', 
+   'datacenter1' : 1 
+  } ;
+```
+3. Setelah membuat keyspace masuk kedalam keyspace tersebut dengan cara:
+```
+use admission;
+```
+4. Karena csv tidak memiliki data type sehingga diperlukan melakukan pembuatan table sebelum melakukan importing csv.
+```
+CREATE TABLE test (SerialNo int,GREScore text,TOEFScore text,UniversityRating text ,SOP text,LOR text
+,CGPA text,Research text,ChanceofAdmit text, PRIMARY KEY(SerialNo));
+```
+5. Lalu import file csv ke table test
+```
+COPY test (SerialNo,GRE_Score,TOEFScore,UniversityRating,SOP,LOR,CGPA,Research,ChanceofAdmit) FROM '/v agrant/Admission_Predict.csv' WITH DELIMITER = ',' AND HEADER = TRUE;
+```
+![alt](Screenshoot/afterimport.JPG)
+
+# 1.6.2 CRUD
+### Select
+```
+SELECT * FROM test;
+```
+![alt](Screenshoot/Select.JPG)
+
+### Insert
+```
+INSERT INTO test(SerialNo) values(401);
+```
+![alt](Screenshoot/Insert.JPG)
+
+### Delete
+```
+DELETE FROM test WHERE SerialNo = 400;
+```
+![alt](Screenshoot/Delete-1.JPG)
+![alt](Screenshoot/Delete-2.JPG)
+
+### Update
+```
+UPDATE test SET universityrating = '5' WHERE SerialNo = 401;
+```
+![alt](Screenshoot/Update.JPG)
 # 2. Implementasi Cassandra Multi Node
 Pada bagian ini, kita akan melakukan implementasi multinode. Pertama, lakukan instalasi seperti node sebelumnya.
 # 2.1. Yang dibutuhkan
