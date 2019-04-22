@@ -2,7 +2,7 @@
 # 1.1 Apa itu Cassandra?
 Cassandra atau lengkap APACHE CASSANDRA adalah salah satu produk open source untuk menajemen database yang didistribusikan oleh Apache yang sangat scalable (dapat diukur) dan dirancang untuk mengelola data terstruktur yang berkapasitas sangat besar (Big Data) yang tersebar di banyak server. Cassandra merupakan salah satu implementasi dari NoSQL (Not Only SQL) seperti mongoDB. NoSQL merupakan konsep penyimpanan database dinamis yang tidak terikat pada relasi-relasi tabel yang kaku seperti RDBMS. Selain lebih scalable, NoSQL juga memiliki performa pengaksesan yang lebih cepat. Hal-hal itulah yang membuat NoSQL menjadi semakin populer beberapa tahun belakangan ini.
 # 1.2 Perbedaan Antara Relasional dan NoSQL
-![alt](Screenshoot/perbedaan.JPG)
+![alt](Screenshoot/Perbedaan.JPG)
 # 1.3 Arsitektur
 Konsep Replication Antar Node Cassandra
 ![alt](Screenshoot/Arsitektur.JPG)
