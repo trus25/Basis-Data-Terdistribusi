@@ -208,7 +208,8 @@ ProxySQLAdmin> SAVE ADMIN VARIABLES TO DISK;
 ```
 ### 4.4.3 Konfigurasi pada ProxySQL
 Pertama-tama, masuk pada salah satu node server. Lalu download sql file berikut yang berisi fungsi penting agar proxysql group replication bekerja.
-```curl -OL https://gist.github.com/lefred/77ddbde301c72535381ae7af9f968322/raw/5e40b03333a3c148b78aa348fd2cd5b5dbb36e4d/addition_to_sys.sql
+```
+curl -OL https://gist.github.com/lefred/77ddbde301c72535381ae7af9f968322/raw/5e40b03333a3c148b78aa348fd2cd5b5dbb36e4d/addition_to_sys.sql
 ```
 Setelah itu masuk ke MySQL dan buat user baru
 ```
