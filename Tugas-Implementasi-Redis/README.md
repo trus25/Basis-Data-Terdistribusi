@@ -76,16 +76,16 @@ Untuk melakukan check status jalankan ```ps aux | grep redis```:
 Jika semua sudah berjalan dengan baik isi pada ```redis.log``` kurang lebih seperti ini:
 ![alt](Src/redislog.JPG)<br/>
 
-Setelah itu melakukan testing dengan menjalankan ```redis-cli```, lalu set demokey pada master dengan teks "testing testing":
-![alt](Src/testmaster.JPG)
+Setelah itu melakukan testing dengan menjalankan ```redis-cli```, lalu set demokey pada master dengan teks "testing testing":<br/>
+![alt](Src/testmaster.JPG)<br/>
 lalu get demokey tersebut pada slave:
 ![alt](Src/testslave1.JPG)<br/>
 ![alt](Src/testslave2.JPG)<br/>
 
 # 4. Failover
 Saat master mati, maka slave akan menunjuk salah 1 master untuk menjadi master yang baru. Mematikan master dapat dilakukan dengan menjalankan ```redis-cli -p 6379 DEBUG SEGFAULT```:
-![alt](Src/failoverslave1)<br/>
-![alt](Src/failoverslave2)<br/>
+![alt](Src/failoverslave1.JPG)<br/>
+![alt](Src/failoverslave2.JPG)<br/>
 # 5. Referensi
 https://medium.com/@amila922/redis-sentinel-high-availability-everything-you-need-to-know-from-dev-to-prod-complete-guide-deb198e70ea6
 
