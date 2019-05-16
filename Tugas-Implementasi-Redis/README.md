@@ -78,7 +78,7 @@ Jika semua sudah berjalan dengan baik isi pada ```redis.log``` kurang lebih sepe
 
 Setelah itu melakukan testing dengan menjalankan ```redis-cli```, lalu set demokey pada master dengan teks "testing testing":<br/>
 ![alt](Src/testmaster.JPG)<br/>
-lalu get demokey tersebut pada slave:
+lalu get demokey tersebut pada slave:<br/>
 ![alt](Src/testslave1.JPG)<br/>
 ![alt](Src/testslave2.JPG)<br/>
 
