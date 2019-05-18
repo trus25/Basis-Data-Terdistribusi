@@ -1,4 +1,4 @@
-UPDATE global_variables SET variable_value='admin:bdt2019' WHERE variable_name='admin-admin_credentials';
+UPDATE global_variables SET variable_value='admin:admin' WHERE variable_name='admin-admin_credentials';
 LOAD ADMIN VARIABLES TO RUNTIME;
 SAVE ADMIN VARIABLES TO DISK;
 
