@@ -1,5 +1,7 @@
 # IMPLEMENTASI REDIS
 # 1.Model Arsitektur
+  | IP Address | Hostname | Deskripsi |
+  | --- | --- | --- |
   | 192.168.100.11 | clusterdb1 | NDB Manager dan Redis Master|
   | 192.168.100.12 | clusterdb2 | Data Node1 dan MySQL API 1 dan Redis Slave 1| 
   | 192.168.100.13 | clusterdb3 | Data Node2 dan MySQL API 2 dan Redis Slave 2|
