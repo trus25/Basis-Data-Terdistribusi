@@ -36,13 +36,16 @@ define( 'WP_REDIS_SERVERS', [
 ] );
 ```
 Setelah itu aktifkan Redis Object Cache, maka seperti ini hasilnya.<br/>
-![alt](Src/redisaktivasi.JPG)
+![alt](Src/redisobjectcache.JPG)
 # 4. Failover
-Saat master mati, maka slave akan menunjuk salah 1 master untuk menjadi master yang baru. Mematikan master dapat dilakukan dengan menjalankan ```redis-cli -p 6379 DEBUG SEGFAULT```:
-![alt](Src/failoverslave1.JPG)<br/>
-![alt](Src/failoverslave2.JPG)<br/>
+Saat master atau salah satu slave mati maka, redis object akan tetap berjalan dan dengan tanda ```connected```.<br/>
+![alt](Src/mastermati.JPG)<br/>
+Namun seluruh node redis mati, maka redis cache akan mati dengan tanda ```not connected```</br>
+![alt](Src/semuamati.JPG)<br/>
 # 5. Referensi
-https://medium.com/@amila922/redis-sentinel-high-availability-everything-you-need-to-know-from-dev-to-prod-complete-guide-deb198e70ea6
-
+https://medium.com/@amila922/redis-sentinel-high-availability-everything-you-need-to-know-from-dev-to-prod-complete-guide-deb198e70ea6<br/>
+https://wordpress.org/plugins/redis-cache/<br/>
+https://www.digitalocean.com/community/questions/why-i-can-t-install-a-new-plugin-on-my-wordpress<br/>
+https://linuxize.com/post/how-to-setup-ftp-server-with-vsftpd-on-ubuntu-18-04/#1-ftp-access.
 
 
