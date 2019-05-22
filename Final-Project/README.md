@@ -1,4 +1,5 @@
-# IMPLEMENTASI REDIS
+# Aplikasi Wordpress dengan Redis Cache dan MySQL Cluster
+ WorldOfWuxia adalah aplikasi yang digunakan untuk membaca novel-novel dari china khususnya dengan genre wuxia.
 # 1.Model Arsitektur
   | IP Address | Hostname | Deskripsi |
   | --- | --- | --- |
